@@ -4,24 +4,24 @@ type token =
   | ACT1
   | ACT2
   | SPE of (
-# 7 "bin/parser.mly"
+# 7 "linux-bin/parser.mly"
            char
-# 10 "bin/parser.ml"
+# 10 "linux-bin/parser.ml"
 )
   | DIG of (
-# 8 "bin/parser.mly"
+# 8 "linux-bin/parser.mly"
            int
-# 15 "bin/parser.ml"
+# 15 "linux-bin/parser.ml"
 )
   | LOW of (
-# 9 "bin/parser.mly"
+# 9 "linux-bin/parser.mly"
            string
-# 20 "bin/parser.ml"
+# 20 "linux-bin/parser.ml"
 )
   | UPP of (
-# 10 "bin/parser.mly"
+# 10 "linux-bin/parser.mly"
            string
-# 25 "bin/parser.ml"
+# 25 "linux-bin/parser.ml"
 )
   | PLUS
   | MINUS
@@ -30,10 +30,10 @@ type token =
 
 open Parsing
 let _ = parse_error;;
-# 1 "bin/parser.mly"
+# 1 "linux-bin/parser.mly"
    open List
     open Ast 
-# 37 "bin/parser.ml"
+# 37 "linux-bin/parser.ml"
 let yytransl_const = [|
   257 (* EOL *);
   258 (* SPACE *);
@@ -148,212 +148,212 @@ let yyact = [|
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : 'funct) in
     Obj.repr(
-# 18 "bin/parser.mly"
+# 18 "linux-bin/parser.mly"
                 ( () )
-# 154 "bin/parser.ml"
+# 154 "linux-bin/parser.ml"
                : unit))
 ; (fun __caml_parser_env ->
     Obj.repr(
-# 21 "bin/parser.mly"
+# 21 "linux-bin/parser.mly"
               ( ( ) )
-# 160 "bin/parser.ml"
+# 160 "linux-bin/parser.ml"
                : 'plus))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'plus) in
     Obj.repr(
-# 22 "bin/parser.mly"
+# 22 "linux-bin/parser.mly"
                 ( ( ) )
-# 167 "bin/parser.ml"
+# 167 "linux-bin/parser.ml"
                : 'plus))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'plus) in
     Obj.repr(
-# 23 "bin/parser.mly"
+# 23 "linux-bin/parser.mly"
                 ( ( ) )
-# 174 "bin/parser.ml"
+# 174 "linux-bin/parser.ml"
                : 'plus))
 ; (fun __caml_parser_env ->
     Obj.repr(
-# 25 "bin/parser.mly"
+# 25 "linux-bin/parser.mly"
                  ( ( ) )
-# 180 "bin/parser.ml"
+# 180 "linux-bin/parser.ml"
                : 'minus))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'minus) in
     Obj.repr(
-# 26 "bin/parser.mly"
+# 26 "linux-bin/parser.mly"
                  ( ( ) )
-# 187 "bin/parser.ml"
+# 187 "linux-bin/parser.ml"
                : 'minus))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'minus) in
     Obj.repr(
-# 27 "bin/parser.mly"
+# 27 "linux-bin/parser.mly"
                  ( ( ) )
-# 194 "bin/parser.ml"
+# 194 "linux-bin/parser.ml"
                : 'minus))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 1 : 'plus) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'pwd) in
     Obj.repr(
-# 29 "bin/parser.mly"
+# 29 "linux-bin/parser.mly"
                   ( '+',(  _1 , _3  ))
-# 203 "bin/parser.ml"
+# 203 "linux-bin/parser.ml"
                : 'operation))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 1 : 'minus) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'pwd) in
     Obj.repr(
-# 30 "bin/parser.mly"
+# 30 "linux-bin/parser.mly"
                    ( '-',(  _1 ,  check_pw _3) )
-# 212 "bin/parser.ml"
+# 212 "linux-bin/parser.ml"
                : 'operation))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'operation) in
     Obj.repr(
-# 31 "bin/parser.mly"
+# 31 "linux-bin/parser.mly"
                      ( _2 )
-# 219 "bin/parser.ml"
+# 219 "linux-bin/parser.ml"
                : 'operation))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'operation) in
     Obj.repr(
-# 32 "bin/parser.mly"
+# 32 "linux-bin/parser.mly"
                      ( _1 )
-# 226 "bin/parser.ml"
+# 226 "linux-bin/parser.ml"
                : 'operation))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : char) in
     Obj.repr(
-# 36 "bin/parser.mly"
+# 36 "linux-bin/parser.mly"
             (   [Ast.Special _1] )
-# 233 "bin/parser.ml"
+# 233 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : int) in
     Obj.repr(
-# 38 "bin/parser.mly"
+# 38 "linux-bin/parser.mly"
          (  [Ast.Digit _1]   )
-# 240 "bin/parser.ml"
+# 240 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
-# 39 "bin/parser.mly"
+# 39 "linux-bin/parser.mly"
          (  [Ast.Lowercase _1] )
-# 247 "bin/parser.ml"
+# 247 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
-# 40 "bin/parser.mly"
+# 40 "linux-bin/parser.mly"
          (   [Ast.Uppercase _1]  )
-# 254 "bin/parser.ml"
+# 254 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 0 : int) in
     Obj.repr(
-# 41 "bin/parser.mly"
+# 41 "linux-bin/parser.mly"
              (  (_1 @ [Ast.Digit _2])    )
-# 262 "bin/parser.ml"
+# 262 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
-# 42 "bin/parser.mly"
+# 42 "linux-bin/parser.mly"
              (   ( _1 @ [Ast.Lowercase _2])    )
-# 270 "bin/parser.ml"
+# 270 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
-# 43 "bin/parser.mly"
+# 43 "linux-bin/parser.mly"
              (  (_1 @ [Ast.Uppercase _2])    )
-# 278 "bin/parser.ml"
+# 278 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'pwd) in
     let _2 = (Parsing.peek_val __caml_parser_env 0 : char) in
     Obj.repr(
-# 44 "bin/parser.mly"
+# 44 "linux-bin/parser.mly"
              (   (_1 @ [Ast.Special _2])   )
-# 286 "bin/parser.ml"
+# 286 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     Obj.repr(
-# 45 "bin/parser.mly"
+# 45 "linux-bin/parser.mly"
                (    Ast.Iterator::(!(Ast.active_pw))    )
-# 292 "bin/parser.ml"
+# 292 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 1 : 'pwd) in
     Obj.repr(
-# 46 "bin/parser.mly"
+# 46 "linux-bin/parser.mly"
                   (  Ast.Iterator::(if List.is_empty (!(Ast.active_pw)) then _2 else !(Ast.active_pw))  )
-# 299 "bin/parser.ml"
+# 299 "linux-bin/parser.ml"
                : 'pwd))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 1 : 'sequence) in
     Obj.repr(
-# 49 "bin/parser.mly"
+# 49 "linux-bin/parser.mly"
                         ( Ast.run_sequence _2 None)
-# 306 "bin/parser.ml"
+# 306 "linux-bin/parser.ml"
                : 'funct))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 2 : int) in
     let _3 = (Parsing.peek_val __caml_parser_env 1 : 'sequence) in
     Obj.repr(
-# 50 "bin/parser.mly"
+# 50 "linux-bin/parser.mly"
                             ( Ast.run_sequence _3 (Some _2) )
-# 314 "bin/parser.ml"
+# 314 "linux-bin/parser.ml"
                : 'funct))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : 'operation) in
     Obj.repr(
-# 53 "bin/parser.mly"
+# 53 "linux-bin/parser.mly"
                   ( [_1] )
-# 321 "bin/parser.ml"
+# 321 "linux-bin/parser.ml"
                : 'sequence))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'sequence) in
     Obj.repr(
-# 54 "bin/parser.mly"
+# 54 "linux-bin/parser.mly"
                           (  _2  )
-# 328 "bin/parser.ml"
+# 328 "linux-bin/parser.ml"
                : 'sequence))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'sequence) in
     Obj.repr(
-# 55 "bin/parser.mly"
+# 55 "linux-bin/parser.mly"
                     (  _1  )
-# 335 "bin/parser.ml"
+# 335 "linux-bin/parser.ml"
                : 'sequence))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'sequence) in
     Obj.repr(
-# 56 "bin/parser.mly"
+# 56 "linux-bin/parser.mly"
                   (  _2  )
-# 342 "bin/parser.ml"
+# 342 "linux-bin/parser.ml"
                : 'sequence))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 1 : 'sequence) in
     Obj.repr(
-# 57 "bin/parser.mly"
+# 57 "linux-bin/parser.mly"
                   (  _1  )
-# 349 "bin/parser.ml"
+# 349 "linux-bin/parser.ml"
                : 'sequence))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'sequence) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'sequence) in
     Obj.repr(
-# 58 "bin/parser.mly"
+# 58 "linux-bin/parser.mly"
                            (  _1  @  _3  )
-# 357 "bin/parser.ml"
+# 357 "linux-bin/parser.ml"
                : 'sequence))
 (* Entry pwdf *)
 ; (fun __caml_parser_env -> raise (Parsing.YYexit (Parsing.peek_val __caml_parser_env 0)))

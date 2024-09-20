@@ -1,10 +1,10 @@
-# 1 "bin/lexer.mll"
+# 1 "linux-bin/lexer.mll"
          
         open Parser    
         open String     
         exception Eof
         
-# 8 "bin/lexer.ml"
+# 8 "linux-bin/lexer.ml"
 let __ocaml_lex_tables = {
   Lexing.lex_base =
    "\000\000\243\255\001\000\078\000\071\000\248\255\249\255\065\000\
@@ -120,89 +120,89 @@ let rec token lexbuf =
 and __ocaml_lex_token_rec lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 8 "bin/lexer.mll"
+# 8 "linux-bin/lexer.mll"
                            ( EOL )
-# 126 "bin/lexer.ml"
+# 126 "linux-bin/lexer.ml"
 
   | 1 ->
 let
-# 9 "bin/lexer.mll"
+# 9 "linux-bin/lexer.mll"
                                                                c
-# 132 "bin/lexer.ml"
+# 132 "linux-bin/lexer.ml"
 = Lexing.sub_lexeme_char lexbuf lexbuf.Lexing.lex_start_pos in
-# 9 "bin/lexer.mll"
+# 9 "linux-bin/lexer.mll"
                                                                  ( SPE(c) )
-# 136 "bin/lexer.ml"
+# 136 "linux-bin/lexer.ml"
 
   | 2 ->
-# 10 "bin/lexer.mll"
+# 10 "linux-bin/lexer.mll"
                    (PLUS)
-# 141 "bin/lexer.ml"
+# 141 "linux-bin/lexer.ml"
 
   | 3 ->
-# 11 "bin/lexer.mll"
+# 11 "linux-bin/lexer.mll"
                    (MINUS)
-# 146 "bin/lexer.ml"
+# 146 "linux-bin/lexer.ml"
 
   | 4 ->
-# 12 "bin/lexer.mll"
+# 12 "linux-bin/lexer.mll"
                     (SPACE)
-# 151 "bin/lexer.ml"
+# 151 "linux-bin/lexer.ml"
 
   | 5 ->
 let
-# 13 "bin/lexer.mll"
+# 13 "linux-bin/lexer.mll"
                           s
-# 157 "bin/lexer.ml"
+# 157 "linux-bin/lexer.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 13 "bin/lexer.mll"
+# 13 "linux-bin/lexer.mll"
                              ( LOW(s)  )
-# 161 "bin/lexer.ml"
+# 161 "linux-bin/lexer.ml"
 
   | 6 ->
-# 14 "bin/lexer.mll"
+# 14 "linux-bin/lexer.mll"
                  (BEGIN)
-# 166 "bin/lexer.ml"
+# 166 "linux-bin/lexer.ml"
 
   | 7 ->
-# 15 "bin/lexer.mll"
+# 15 "linux-bin/lexer.mll"
                   (END)
-# 171 "bin/lexer.ml"
+# 171 "linux-bin/lexer.ml"
 
   | 8 ->
 let
-# 16 "bin/lexer.mll"
+# 16 "linux-bin/lexer.mll"
                           s
-# 177 "bin/lexer.ml"
+# 177 "linux-bin/lexer.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 16 "bin/lexer.mll"
+# 16 "linux-bin/lexer.mll"
                              ( UPP(s)  )
-# 181 "bin/lexer.ml"
+# 181 "linux-bin/lexer.ml"
 
   | 9 ->
 let
-# 17 "bin/lexer.mll"
+# 17 "linux-bin/lexer.mll"
                           lxm
-# 187 "bin/lexer.ml"
+# 187 "linux-bin/lexer.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 17 "bin/lexer.mll"
+# 17 "linux-bin/lexer.mll"
                               ( DIG(int_of_string lxm) )
-# 191 "bin/lexer.ml"
+# 191 "linux-bin/lexer.ml"
 
   | 10 ->
-# 18 "bin/lexer.mll"
+# 18 "linux-bin/lexer.mll"
                 (ACT1)
-# 196 "bin/lexer.ml"
+# 196 "linux-bin/lexer.ml"
 
   | 11 ->
-# 19 "bin/lexer.mll"
+# 19 "linux-bin/lexer.mll"
                  (ACT2)
-# 201 "bin/lexer.ml"
+# 201 "linux-bin/lexer.ml"
 
   | 12 ->
-# 20 "bin/lexer.mll"
+# 20 "linux-bin/lexer.mll"
                  ( raise Eof )
-# 206 "bin/lexer.ml"
+# 206 "linux-bin/lexer.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
       __ocaml_lex_token_rec lexbuf __ocaml_lex_state

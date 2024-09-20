@@ -4,24 +4,24 @@ type token =
   | ACT1
   | ACT2
   | SPE of (
-# 7 "bin/parser.mly"
+# 7 "linux-bin/parser.mly"
            char
-# 10 "bin/parser.mli"
+# 10 "linux-bin/parser.mli"
 )
   | DIG of (
-# 8 "bin/parser.mly"
+# 8 "linux-bin/parser.mly"
            int
-# 15 "bin/parser.mli"
+# 15 "linux-bin/parser.mli"
 )
   | LOW of (
-# 9 "bin/parser.mly"
+# 9 "linux-bin/parser.mly"
            string
-# 20 "bin/parser.mli"
+# 20 "linux-bin/parser.mli"
 )
   | UPP of (
-# 10 "bin/parser.mly"
+# 10 "linux-bin/parser.mly"
            string
-# 25 "bin/parser.mli"
+# 25 "linux-bin/parser.mli"
 )
   | PLUS
   | MINUS

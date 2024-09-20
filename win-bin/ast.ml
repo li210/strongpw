@@ -250,7 +250,7 @@ let rec char_operation c lg i = let ls = delete lg in
         Uppercase "DECLARATION" 
       else if List.exists (fun a -> fst a = (List.nth prms 0)) !references then
         (references := ((List.nth prms 0), (List.nth prms 1)) :: !references; 
-        Deletor Empty) else begin references := (((List.nth prms 0), (List.nth prms 1)):: (List.filter (fun a -> fst a <> List.nth prms 0) !references)   ); Printf.printf "declarin %s   \n" (pw_string   prms  )   ; Deletor (Empty) end
+        Deletor Empty) else begin references := (((List.nth prms 0), (List.nth prms 1)):: (List.filter (fun a -> fst a <> List.nth prms 0) !references)   );   Deletor (Empty) end
     | '!' -> begin
       let prms = List.filteri (fun j _ -> i - j = 1) ls in 
       if List.length prms < 1 then 
