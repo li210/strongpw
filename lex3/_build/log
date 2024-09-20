@@ -1,0 +1,401 @@
+# C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\dune.exe build --profile release
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location:
+# C:\Users\teotk\AppData\Local\Microsoft\Windows\INetCache\dune\db
+# Workspace root: "D:\\games\\ocam\\nongames\\lextest\\lex3"
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -config > C:\cygwin64\tmp\dune_1738dc_output
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlyacc.exe bin/parser.mly)
+> 18 shift/reduce conflicts, 2 reduce/reduce conflicts.
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamldep.opt.exe -modules -intf bin/parser.mli) > _build/default/bin/.strongpw.eobjs/dune__exe__Parser.intf.d
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamldep.opt.exe -modules -impl bin/parser.ml) > _build/default/bin/.strongpw.eobjs/dune__exe__Parser.impl.d
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamldep.opt.exe -modules -intf bin/strongpw.mli) > _build/default/bin/.strongpw.eobjs/dune__exe__Strongpw.intf.d
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -w -40 -w -49 -nopervasives -nostdlib -g -bin-annot -bin-annot-occurrences -I bin/.strongpw.eobjs/byte -no-alias-deps -o bin/.strongpw.eobjs/byte/dune__exe.cmo -c -impl bin/.strongpw.eobjs/dune__exe.ml-gen)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -w -40 -g -bin-annot -bin-annot-occurrences -I bin/.strongpw.eobjs/byte -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/byte/dune__exe__Parser.cmi -c -intf bin/parser.mli)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -w -40 -g -bin-annot -bin-annot-occurrences -I bin/.strongpw.eobjs/byte -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/byte/dune__exe__Strongpw.cmi -c -intf bin/strongpw.mli)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -w -49 -nopervasives -nostdlib -g -I bin/.strongpw.eobjs/byte -I bin/.strongpw.eobjs/native -intf-suffix .ml-gen -no-alias-deps -o bin/.strongpw.eobjs/native/dune__exe.cmx -c -impl bin/.strongpw.eobjs/dune__exe.ml-gen)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -w -40 -g -bin-annot -bin-annot-occurrences -I bin/.strongpw.eobjs/byte -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/byte/dune__exe__Lexer.cmo -c -impl bin/lexer.ml)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlc.opt.exe -w -40 -g -bin-annot -bin-annot-occurrences -I bin/.strongpw.eobjs/byte -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/byte/dune__exe__Ast.cmo -c -impl bin/ast.ml)
+> File "bin/ast.ml", lines 154-158, characters 12-73:
+> 154 | ............(match  List.nth prms 1  with 
+> 155 |             | Digit t -> if s = t then 1 else 0 
+> 156 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> 157 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> 158 |             | Special t -> let u = Char.code t in if s = u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 160-164, characters 12-93:
+> 160 | ............(match List.nth prms 1  with 
+> 161 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 162 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 163 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 164 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 166-170, characters 12-50:
+> 166 | ............(match List.nth prms 1  with 
+> 167 |             | Digit t -> let u = Char.chr t in if s = u then 1 else 0  
+> 168 |             | Lowercase t -> let u = String.get t 0 in if s = u then 1 else 0
+> 169 |             | Uppercase t -> let u = String.get t 0 in if s = u then 1 else 0  
+> 170 |             | Special t -> if s = t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 172-176, characters 12-93:
+> 172 | ............(match List.nth prms 1  with 
+> 173 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 174 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 175 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 176 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 152-176, characters 10-93:
+> 152 | ..........match  List.nth prms 0  with 
+> 153 |           | Digit s -> 
+> 154 |             (match  List.nth prms 1  with 
+> 155 |             | Digit t -> if s = t then 1 else 0 
+> 156 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> ...
+> 173 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 174 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 175 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 176 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 187-191, characters 12-73:
+> 187 | ............(match List.nth prms 1  with 
+> 188 |             | Digit t -> if s > t then 1 else 0 
+> 189 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> 190 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> 191 |             | Special t -> let u = Char.code t in if s > u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 193-197, characters 12-93:
+> 193 | ............(match List.nth prms 1  with 
+> 194 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 1 then 1 else 0  
+> 195 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 196 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 197 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 199-203, characters 12-50:
+> 199 | ............(match List.nth prms 1  with 
+> 200 |             | Digit t -> let u = Char.chr t in if s > u then 1 else 0  
+> 201 |             | Lowercase t -> let u = String.get t 0 in if s > u then 1 else 0
+> 202 |             | Uppercase t -> let u = String.get t 0 in if s > u then 1 else 0  
+> 203 |             | Special t -> if s = t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 205-209, characters 12-93:
+> 205 | ............(match   List.nth prms 1  with 
+> 206 |             | Digit t -> let u = Int.to_string t in if String.compare s u > 0 then 1 else 0  
+> 207 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 208 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 209 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 185-209, characters 10-93:
+> 185 | ..........match List.nth prms 0 with 
+> 186 |           | Digit s -> 
+> 187 |             (match List.nth prms 1  with 
+> 188 |             | Digit t -> if s > t then 1 else 0 
+> 189 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> ...
+> 206 |             | Digit t -> let u = Int.to_string t in if String.compare s u > 0 then 1 else 0  
+> 207 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 208 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 209 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 221-225, characters 12-73:
+> 221 | ............(match List.nth prms 1 with 
+> 222 |             | Digit t -> if s < t then 1 else 0 
+> 223 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> 224 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> 225 |             | Special t -> let u = Char.code t in if s < u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 227-231, characters 12-94:
+> 227 | ............(match List.nth prms 1 with 
+> 228 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 229 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 230 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 231 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 233-237, characters 12-50:
+> 233 | ............(match List.nth prms 1 with 
+> 234 |             | Digit t -> let u = Char.chr t in if s < u then 1 else 0  
+> 235 |             | Lowercase t -> let u = String.get t 0 in if s < u then 1 else 0
+> 236 |             | Uppercase t -> let u = String.get t 0 in if s < u then 1 else 0  
+> 237 |             | Special t -> if s < t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 239-243, characters 12-94:
+> 239 | ............(match List.nth prms 1 with 
+> 240 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 241 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 242 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 243 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 219-243, characters 10-94:
+> 219 | ..........match List.nth prms 0 with 
+> 220 |           | Digit s -> 
+> 221 |             (match List.nth prms 1 with 
+> 222 |             | Digit t -> if s < t then 1 else 0 
+> 223 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> ...
+> 240 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 241 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 242 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 243 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", line 27, characters 17-18:
+> 27 |     | x :: xs as l ->
+>                       ^
+> Warning 26 [unused-var]: unused variable l.
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -g -I bin/.strongpw.eobjs/byte -I bin/.strongpw.eobjs/native -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -I lib/.lex3.objs/native -intf-suffix .ml -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/native/dune__exe__Ast.cmx -c -impl bin/ast.ml)
+> File "bin/ast.ml", lines 154-158, characters 12-73:
+> 154 | ............(match  List.nth prms 1  with 
+> 155 |             | Digit t -> if s = t then 1 else 0 
+> 156 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> 157 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> 158 |             | Special t -> let u = Char.code t in if s = u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 160-164, characters 12-93:
+> 160 | ............(match List.nth prms 1  with 
+> 161 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 162 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 163 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 164 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 166-170, characters 12-50:
+> 166 | ............(match List.nth prms 1  with 
+> 167 |             | Digit t -> let u = Char.chr t in if s = u then 1 else 0  
+> 168 |             | Lowercase t -> let u = String.get t 0 in if s = u then 1 else 0
+> 169 |             | Uppercase t -> let u = String.get t 0 in if s = u then 1 else 0  
+> 170 |             | Special t -> if s = t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 172-176, characters 12-93:
+> 172 | ............(match List.nth prms 1  with 
+> 173 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 174 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 175 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 176 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 152-176, characters 10-93:
+> 152 | ..........match  List.nth prms 0  with 
+> 153 |           | Digit s -> 
+> 154 |             (match  List.nth prms 1  with 
+> 155 |             | Digit t -> if s = t then 1 else 0 
+> 156 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s = u then 1 else 0  
+> ...
+> 173 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 0 then 1 else 0  
+> 174 |             | Lowercase t -> if String.compare s t = 0 then 1 else 0  
+> 175 |             | Uppercase t -> if String.compare s t = 0 then 1 else 0
+> 176 |             | Special t -> let u = Char.escaped t in if String.compare s u = 0 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 187-191, characters 12-73:
+> 187 | ............(match List.nth prms 1  with 
+> 188 |             | Digit t -> if s > t then 1 else 0 
+> 189 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> 190 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> 191 |             | Special t -> let u = Char.code t in if s > u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 193-197, characters 12-93:
+> 193 | ............(match List.nth prms 1  with 
+> 194 |             | Digit t -> let u = Int.to_string t in if String.compare s u = 1 then 1 else 0  
+> 195 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 196 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 197 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 199-203, characters 12-50:
+> 199 | ............(match List.nth prms 1  with 
+> 200 |             | Digit t -> let u = Char.chr t in if s > u then 1 else 0  
+> 201 |             | Lowercase t -> let u = String.get t 0 in if s > u then 1 else 0
+> 202 |             | Uppercase t -> let u = String.get t 0 in if s > u then 1 else 0  
+> 203 |             | Special t -> if s = t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 205-209, characters 12-93:
+> 205 | ............(match   List.nth prms 1  with 
+> 206 |             | Digit t -> let u = Int.to_string t in if String.compare s u > 0 then 1 else 0  
+> 207 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 208 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 209 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 185-209, characters 10-93:
+> 185 | ..........match List.nth prms 0 with 
+> 186 |           | Digit s -> 
+> 187 |             (match List.nth prms 1  with 
+> 188 |             | Digit t -> if s > t then 1 else 0 
+> 189 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s > u then 1 else 0  
+> ...
+> 206 |             | Digit t -> let u = Int.to_string t in if String.compare s u > 0 then 1 else 0  
+> 207 |             | Lowercase t -> if String.compare s t = 1 then 1 else 0  
+> 208 |             | Uppercase t -> if String.compare s t = 1 then 1 else 0
+> 209 |             | Special t -> let u = Char.escaped t in if String.compare s u = 1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 221-225, characters 12-73:
+> 221 | ............(match List.nth prms 1 with 
+> 222 |             | Digit t -> if s < t then 1 else 0 
+> 223 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> 224 |             | Uppercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> 225 |             | Special t -> let u = Char.code t in if s < u then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 227-231, characters 12-94:
+> 227 | ............(match List.nth prms 1 with 
+> 228 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 229 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 230 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 231 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 233-237, characters 12-50:
+> 233 | ............(match List.nth prms 1 with 
+> 234 |             | Digit t -> let u = Char.chr t in if s < u then 1 else 0  
+> 235 |             | Lowercase t -> let u = String.get t 0 in if s < u then 1 else 0
+> 236 |             | Uppercase t -> let u = String.get t 0 in if s < u then 1 else 0  
+> 237 |             | Special t -> if s < t then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 239-243, characters 12-94:
+> 239 | ............(match List.nth prms 1 with 
+> 240 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 241 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 242 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 243 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", lines 219-243, characters 10-94:
+> 219 | ..........match List.nth prms 0 with 
+> 220 |           | Digit s -> 
+> 221 |             (match List.nth prms 1 with 
+> 222 |             | Digit t -> if s < t then 1 else 0 
+> 223 |             | Lowercase t -> let u = Bytes.get_uint16_ne (String.to_bytes t) 0 in if s < u then 1 else 0  
+> ...
+> 240 |             | Digit t -> let u = Int.to_string t in if String.compare s u = -1 then 1 else 0  
+> 241 |             | Lowercase t -> if String.compare s t = -1 then 1 else 0  
+> 242 |             | Uppercase t -> if String.compare s t = -1 then 1 else 0
+> 243 |             | Special t -> let u = Char.escaped t in if String.compare s u = -1 then 1 else 0)
+> Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> (Empty|CutL|CutR|Iterator|Pos|Input|Switcher|DeletorL _|DeletorR _|Deletor _|
+> Password _)
+>
+> File "bin/ast.ml", line 27, characters 17-18:
+> 27 |     | x :: xs as l ->
+>                       ^
+> Warning 26 [unused-var]: unused variable l.
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -g -I bin/.strongpw.eobjs/byte -I bin/.strongpw.eobjs/native -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -I lib/.lex3.objs/native -intf-suffix .ml -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/native/dune__exe__Parser.cmx -c -impl bin/parser.ml)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -g -I bin/.strongpw.eobjs/byte -I bin/.strongpw.eobjs/native -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -I lib/.lex3.objs/native -intf-suffix .ml -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/native/dune__exe__Lexer.cmx -c -impl bin/lexer.ml)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -g -I bin/.strongpw.eobjs/byte -I bin/.strongpw.eobjs/native -I C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str -I lib/.lex3.objs/byte -I lib/.lex3.objs/native -intf-suffix .ml -no-alias-deps -open Dune__exe -o bin/.strongpw.eobjs/native/dune__exe__Strongpw.cmx -c -impl bin/strongpw.ml)
+$ (cd _build/default && C:\Users\teotk\AppData\Local\opam\5.2.0+msvc\bin\ocamlopt.opt.exe -w -40 -g -o bin/strongpw.exe lib/lex3.cmxa C:/Users/teotk/AppData/Local/opam/5.2.0+msvc/lib/ocaml\str\str.cmxa bin/.strongpw.eobjs/native/dune__exe.cmx bin/.strongpw.eobjs/native/dune__exe__Ast.cmx bin/.strongpw.eobjs/native/dune__exe__Parser.cmx bin/.strongpw.eobjs/native/dune__exe__Lexer.cmx bin/.strongpw.eobjs/native/dune__exe__Strongpw.cmx)

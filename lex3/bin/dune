@@ -1,0 +1,7 @@
+ (ocamlyacc parser)
+  (ocamllex lexer)
+(executable
+ (public_name lex3)
+ (name strongpw)
+ (libraries lex3 str) (modules strongpw ast    parser lexer)
+)
